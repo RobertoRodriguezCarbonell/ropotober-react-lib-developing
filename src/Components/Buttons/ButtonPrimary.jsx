@@ -1,21 +1,31 @@
 import React from 'react';
 
 const ButtonPrimary = ({
-  text = '', // Texto por defecto
-  size = 'md', // Tamaño por defecto
-  bgColor = 'wewak-300',  // Color de fondo por defecto
-  textColor = 'slate-950', // Color del texto por defecto
-  width = 'auto', // Ancho por defecto
-  className = '', // Clases adicionales
+  text = '', 
+  size = 'md', 
+  bgColor = 'wewak-300',  
+  textColor = 'slate-950', 
+  width = 'auto', 
+  className = '', 
+  rounded = 'md', // Nueva propiedad para el radio de borde
   ...props
 }) => {
   // Define estilos de tamaño para los botones
   const sizeClasses = {
-    xsm: 'px-[18px] py-1 text-xs h-8', // Extra Small
-    sm: 'px-[18px] py-1.5 text-sm h-10', // Small
-    md: 'px-[18px] py-2 text-base h-12', // Medium
-    lg: 'px-[18px] py-2.5 text-lg h-14', // Large
-    xlg: 'px-[18px] py-3 text-xl h-16', // Extra Large
+    xsm: 'px-[18px] py-1 text-xs h-8',
+    sm: 'px-[18px] py-1.5 text-sm h-10',
+    md: 'px-[18px] py-2 text-base h-12',
+    lg: 'px-[18px] py-2.5 text-lg h-14',
+    xlg: 'px-[18px] py-3 text-xl h-16',
+  };
+
+  // Define estilos de radio de borde
+  const roundedClasses = {
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    full: 'rounded-full',
   };
 
   // Define las paletas de colores personalizadas para el fondo
@@ -121,9 +131,12 @@ const ButtonPrimary = ({
   const bgColorClass = bgColorClasses[bgColor] || bgColorClasses['wewak-300'];
   const textColorClass = textColorClasses[textColor] || textColorClasses['slate-950'];
 
+  // Usa el radio de borde por defecto 'md' si el valor pasado no es válido
+  const roundedClass = roundedClasses[rounded] || roundedClasses.md;
+
   return (
     <div
-      className={`font-bold cursor-pointer rounded-md flex items-center justify-center ${sizeClass} ${bgColorClass} ${textColorClass} ${className}`}
+      className={`font-bold cursor-pointer rounded-md flex items-center justify-center ${sizeClass} ${bgColorClass} ${textColorClass} ${roundedClass} ${className}`}
       style={{ width, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
       {...props}
     >
