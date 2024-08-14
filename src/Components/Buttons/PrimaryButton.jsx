@@ -1,6 +1,6 @@
 import React from "react";
 
-const ButtonPrimary = ({
+const PrimaryButton = ({
   // Default values
   text = "",
   size = "md",
@@ -114,4 +114,4 @@ const ButtonPrimary = ({
   );
 };
 
-export default ButtonPrimary;
+export default PrimaryButton;

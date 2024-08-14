@@ -1,4 +1,4 @@
-import ButtonPrimary from "./Components/Buttons/ButtonPrimary";
+import PrimaryButton from "./Components/Buttons/PrimaryButton";
 import SecondaryButton from "./Components/Buttons/SecondaryButton";
 
 export default function App() {
@@ -11,27 +11,27 @@ export default function App() {
         <h3 className="text-lg font-bold">Primary</h3>
       </div>
       <div className="space-y-4">
-        <ButtonPrimary
+        <PrimaryButton
           text="Button Component"
           size="xsm"
           hover="hover:bg-primary-background-hover"
         />
-        <ButtonPrimary
+        <PrimaryButton
           text="Button Component"
           size="sm"
           hover="hover:bg-primary-background-hover"
         />
-        <ButtonPrimary
+        <PrimaryButton
           text="Button Component"
           size="md"
           hover="hover:bg-primary-background-hover"
         />
-        <ButtonPrimary
+        <PrimaryButton
           text="Button Component"
           size="lg"
           hover="hover:bg-primary-background-hover"
         />
-        <ButtonPrimary
+        <PrimaryButton
           text="Button Component"
           size="xlg"
           hover="hover:bg-primary-background-hover"
