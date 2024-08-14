@@ -5,7 +5,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <div>
-    <div className="bg-slate-950 h-screen text-white p-4">
+    <div className="bg-slate-600 h-screen text-white p-4">
       <StrictMode>
         <App />
       </StrictMode>

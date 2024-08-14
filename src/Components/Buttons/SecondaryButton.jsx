@@ -1,15 +1,17 @@
 import React from "react";
 
-const ButtonPrimary = ({
+const SecondaryButton = ({
   // Default values
   text = "",
   size = "md",
-  bgColor = "primary-background",
+  bgColor = "transparent", // Por defecto, fondo transparente
   hover = "",
-  textColor = "primary-text",
+  textColor = "secondary-text",
   width = "fit-content",
   rounded = "md",
   className = "",
+  borderSize = "md", // Nuevo prop para tamaño del borde
+  borderColor = "primary-border", // Nuevo prop para color del borde
   ...props
 }) => {
   const sizeClasses = {
@@ -28,7 +30,26 @@ const ButtonPrimary = ({
     full: "rounded-[9999px]",
   };
 
+  const borderSizeClasses = {
+    xsm: "border-[2px]",
+    sm: "border-[3px]",
+    md: "border-[4px]",
+    lg: "border-[5px]",
+    xlg: "border-[6px]",
+  };
+
+  const borderColorClasses = {
+    "primary-border": "border-primary",
+    "success-border": "border-success",
+    "info-border": "border-info",
+    "destroy-border": "border-destroy",
+    "warning-border": "border-warning",
+    "cranberry-border": "border-cranberry",
+    "primary-border": "border-black",
+  };
+
   const bgColorClasses = {
+    transparent: "bg-transparent", // Opción para fondo transparente
     "primary-background": "bg-primary-background",
     "primary-background-hover": "bg-primary-background-hover",
     "success-50": "bg-success-50",
@@ -94,13 +115,15 @@ const ButtonPrimary = ({
   };
 
   const sizeClass = sizeClasses[size] || sizeClasses.md;
-  const bgColorClass = bgColorClasses[bgColor] || bgColorClasses["primary-background"];
+  const bgColorClass = bgColorClasses[bgColor] || bgColorClasses.transparent; // Fondo transparente por defecto
   const textColorClass = textColorClasses[textColor] || textColorClasses["primary-text"];
   const roundedClass = roundedClasses[rounded] || roundedClasses.md;
+  const borderSizeClass = borderSizeClasses[borderSize] || borderSizeClasses.xsm;
+  const borderColorClass = borderColorClasses[borderColor] || "";
 
   return (
     <div
-      className={`font-bold cursor-pointer flex items-center justify-center transition-colors ${sizeClass} ${bgColorClass} ${textColorClass} ${roundedClass} ${className} ${hover}`}
+      className={`font-bold cursor-pointer flex items-center justify-center transition-colors ${sizeClass} ${bgColorClass} ${textColorClass} ${roundedClass} ${borderSizeClass} ${borderColorClass} ${className} ${hover}`}
       style={{
         width,
         whiteSpace: "nowrap",
@@ -114,4 +137,4 @@ const ButtonPrimary = ({
   );
 };
 
-export default ButtonPrimary;
+export default SecondaryButton;
